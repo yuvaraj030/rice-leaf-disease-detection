@@ -50,29 +50,15 @@ Three classification tasks are addressed:
 ## 📁 Repository Structure
 
 ```
-PRCP-1001-RiceLeaf-Disease-Detection/
+rice-leaf-disease-detection/
 │
-├── 📓 PRCP-1001-RiceLeaf-Disease-Detection-Executed-Yuvaraj S.ipynb   # Main executed notebook
-├── 📓 PRCP-1001-RiceLeaf-Disease-Detection.ipynb                      # Source notebook
+├── 📓 PRCP-1001-RiceLeaf-Disease-Detection-Executed-Yuvaraj S.ipynb   # Fully executed notebook
 │
 ├── 📂 dataset/
 │   └── Data/
 │       ├── Bacterial leaf blight/   # 40 JPEG images
 │       ├── Brown spot/              # 40 JPEG images
 │       └── Leaf smut/               # 39 JPEG images
-│
-├── 🖼️ sample_images.png             # Sample images from each disease class
-├── 🖼️ class_distribution.png        # Class balance chart
-├── 🖼️ image_properties.png          # Width/height/filesize distributions
-├── 🖼️ channel_histograms.png        # Per-class RGB channel analysis
-├── 🖼️ color_analysis.png            # Mean color signatures per class
-├── 🖼️ augmentation_visualization.png # Augmented image examples
-├── 🖼️ data_split.png                # Train/val/test split breakdown
-├── 🖼️ training_history.png          # Training curves for all 5 models
-├── 🖼️ model_comparison.png          # Accuracy comparison across models
-├── 🖼️ confusion_matrices.png        # Per-class confusion matrices
-├── 🖼️ cross_validation_results.png  # 5-Fold CV results (MobileNetV2)
-├── 🖼️ sample_predictions.png        # Visual prediction examples
 │
 └── 📄 README.md
 ```
@@ -127,17 +113,7 @@ Per-class RGB intensity distributions reveal distinct **colour signatures** for 
 - Brown Spot → dark brown patches suppress all three channels
 - Leaf Smut → subtle dark angular spots visible in all channels
 
-### 2.4 Sample Images
-
-![Sample Images](sample_images.png)
-
-### 2.5 Class Distribution Chart
-
-![Class Distribution](class_distribution.png)
-
-### 2.6 RGB Channel Histograms
-
-![Channel Histograms](channel_histograms.png)
+> 📓 All EDA charts (sample images, class distribution, RGB histograms, color analysis) are embedded as outputs inside the executed notebook.
 
 ---
 
@@ -155,7 +131,7 @@ Augmentation expands the small training set (~67 images after 70/15/15 split) an
 | Brightness adjustment | ✅ Yes | Lighting varies in the field |
 | Hue / Saturation shift | ❌ **Excluded** | Colour is diagnostically critical — disease identification is colour-dependent |
 
-![Augmentation Visualization](augmentation_visualization.png)
+> 📓 Augmentation examples are visualised inside the executed notebook.
 
 ---
 
@@ -194,17 +170,7 @@ Five architectures were trained and compared:
 
 > ⚠️ **Note on accuracy:** The small dataset (only ~100 training images) sets a realistic ceiling on performance. Accuracy figures reflect the true difficulty of generalising from ~67 training samples across 3 classes.
 
-### Training History
-
-![Training History](training_history.png)
-
-### Model Comparison
-
-![Model Comparison](model_comparison.png)
-
-### Confusion Matrices
-
-![Confusion Matrices](confusion_matrices.png)
+> 📓 Training history, model comparison bar charts, and confusion matrices are all embedded as outputs inside the executed notebook.
 
 ---
 
@@ -219,8 +185,8 @@ Five architectures were trained and compared:
 | **Interpretation** | High std reflects data split sensitivity — normal for very small datasets |
 
 > The CV mean is more reliable than any single hold-out split at this dataset size.
-
-![Cross-Validation Results](cross_validation_results.png)
+>
+> 📓 5-Fold CV charts are embedded inside the executed notebook.
 
 ---
 
@@ -235,7 +201,7 @@ Five architectures were trained and compared:
 
 ## 🔍 Sample Predictions
 
-![Sample Predictions](sample_predictions.png)
+> 📓 Sample prediction grids (with ground truth vs predicted labels) are embedded inside the executed notebook.
 
 ---
 
@@ -276,8 +242,6 @@ The notebook is fully executed and self-contained — all outputs, charts, and m
 | Test (Hold-out) | ~18 images | 15% |
 
 **Stratified split** ensures each class is proportionally represented in every partition.
-
-![Data Split](data_split.png)
 
 ---
 
